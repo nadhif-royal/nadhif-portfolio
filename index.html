@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Nadhif Rif'at Rasendriya</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2b7fff',
+                        secondary: '#f3f4f6',
+                        accent: '#ff4d73'
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite', 
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-secondary text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <main class="min-h-screen flex flex-col items-center justify-center">
+        <h1 class="text-4xl font-bold text-primary mb-4 hover:scale-105 transition-all duration-300">
+            Halo, Nadhif! 🚀
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">Setup Tailwind CSS Berhasil.</p>
+        
+        <div class="w-full max-w-2xl overflow-hidden bg-white py-3 rounded-lg shadow-md relative">
+            <div class="whitespace-nowrap animate-marquee font-semibold text-accent">
+                HTML5 • Tailwind CSS • Vanilla JavaScript • Web Development • UI/UX Design
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
