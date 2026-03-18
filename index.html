@@ -415,7 +415,7 @@
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                                 <div>
                                     <h4 class="text-xl md:text-2xl font-bold text-primary">Head of Logistics & Operations — TOYOWIRA</h4>
-                                    <p class="text-lg font-semibold text-accent mt-1">Bakti BCA Scholarship — PT Bank Central Asia Tbk</p>
+                                    <p class="text-lg font-semibold text-accent mt-1">Bakti BCA Scholarship — PT Bank Central Asia Tbk (BCA)</p>
                                 </div>
                                 <span class="text-sm font-medium text-slate-400 mt-2 md:mt-0 bg-slate-100 px-3 py-1 rounded-full w-fit">Mar 2025 – Dec 2025</span>
                             </div>
@@ -579,7 +579,7 @@
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                                 <div>
                                     <h4 class="text-xl md:text-2xl font-bold text-primary">Campus Ambassador</h4>
-                                    <p class="text-lg font-semibold text-accent mt-1">MySkill</p>
+                                    <p class="text-lg font-semibold text-accent mt-1">MySkill (PT Linimuda Inspirasi Negeri)</p>
                                 </div>
                                 <span class="text-sm font-medium text-slate-400 mt-2 md:mt-0 bg-slate-100 px-3 py-1 rounded-full w-fit">Feb 2026 – Present</span>
                             </div>
@@ -671,7 +671,10 @@
                         <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300"></div>
                     </div>
                     <div class="p-6 md:p-8">
-                        <span class="text-xs font-black text-accent uppercase tracking-widest mb-2 block">Founder & Product Lead</span>
+                        <div class="flex justify-between items-start mb-2 gap-2">
+                            <span class="text-xs font-black text-accent uppercase tracking-widest block">Founder & Product Lead</span>
+                            <span class="text-[9px] font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded border border-slate-100 whitespace-nowrap">NIB: 0401260002686</span>
+                        </div>
                         <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">NusaPath - Your Journey to Authentic Indonesia</h4>
                         <p class="text-slate-500 text-sm line-clamp-2">NusaPath is an AI-powered smart travel platform designed to help travelers plan safe, personalized, and sustainable trips across Indonesia.</p>
                     </div>
@@ -857,7 +860,7 @@
         const projectsData = {
             'project1': {
                 title: "NusaPath - Your Journey to Authentic Indonesia",
-                role: "Founder & Product Lead",
+                role: "Founder & Product Lead <span class='ml-2 inline-block px-2 py-0.5 bg-slate-50 text-slate-400 text-[10px] rounded border border-slate-100 normal-case tracking-normal align-text-bottom shadow-sm'>NIB: 0401260002686</span>",
                 desc: "NusaPath is an AI-powered smart travel platform designed to help travelers plan safe, personalized, and sustainable trips across Indonesia, while directly empowering local tourism players through a verified digital ecosystem. NusaPath integrates AI Smart Itinerary, local partner booking, travel safety support, and eco-conscious features into one seamless mobile-first experience.",
                 bullets: [
                     "<strong class='text-primary block mt-2 mb-1 text-base md:text-lg'>Product Management</strong>",
@@ -901,7 +904,7 @@
             if (!data) return;
 
             document.getElementById('modal-title').innerText = data.title;
-            document.getElementById('modal-role').innerText = data.role;
+            document.getElementById('modal-role').innerHTML = data.role;
             document.getElementById('modal-desc').innerText = data.desc;
             
             document.getElementById('modal-img').src = data.image;
