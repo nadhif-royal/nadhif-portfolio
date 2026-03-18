@@ -617,15 +617,17 @@
                 role: "Founder & Product Lead",
                 desc: "NusaPath is an AI-powered smart travel platform designed to help travelers plan safe, personalized, and sustainable trips across Indonesia, while directly empowering local tourism players through a verified digital ecosystem. NusaPath integrates AI Smart Itinerary, local partner booking, travel safety support, and eco-conscious features into one seamless mobile-first experience.",
                 bullets: [
-                    "User research & problem validation",
-                    "Feature prioritization (MoSCoW)",
-                    "Product requirement & roadmap definition",
-                    "Led Agile sprint planning and optimized resource allocation via Trello to maximize team velocity",
-                    "Drove on-time MVP delivery through rigorous milestone tracking and proactive risk mitigation",
-                    "Facilitated seamless cross-functional communication and continuously monitored development progress to ensure team alignment",
-                    "MVP prototyping & iteration",
-                    "5-year financial projection and landing page execution",
-                    "Landing page (website) development"
+                    "<strong class='text-primary block mt-2 mb-1 text-base md:text-lg'>Product Management</strong>",
+                    "Spearheaded comprehensive user research to validate core problems and identify market opportunities",
+                    "Prioritized product features utilizing the MoSCoW method to align with strategic business goals",
+                    "Defined comprehensive Product Requirement Documents (PRDs) and established a clear actionable product roadmap",
+                    "Directed MVP prototyping and continuous iteration based on user feedback and usability testing",
+                    "Developed a 5 year financial projection to ensure long term product viability",
+                    "<strong class='text-primary block mt-5 mb-1 text-base md:text-lg'>Project Management</strong>",
+                    "Led Agile sprint planning and optimized resource allocation via Trello maximizing overall team velocity",
+                    "Drove on time MVP delivery through rigorous milestone tracking and proactive risk mitigation strategies",
+                    "Facilitated seamless cross functional communication to ensure strict alignment across engineering and design teams",
+                    "Oversaw the end to end development and successful deployment of the promotional landing page"
                 ],
                 linkName: "Official Landing Page",
                 linkUrl: "https://nusapath-website.vercel.app",
@@ -666,7 +668,10 @@
             ulElement.innerHTML = ''; 
             data.bullets.forEach(point => {
                 const li = document.createElement('li');
-                li.innerText = point;
+                if (point.startsWith('<strong')) {
+                    li.className = 'list-none -ml-5';
+                }
+                li.innerHTML = point;
                 ulElement.appendChild(li);
             });
             
