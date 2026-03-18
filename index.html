@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Nadhif Rif'at Rasendriya</title>
+    
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -50,6 +55,7 @@
             <a href="#home" class="flex items-center hover:scale-105 transition-transform duration-300">
                 <img src="assets/logonadhifblack.png" alt="Nadhif Logo" class="h-10 md:h-12 w-auto rounded-xl shadow-md object-cover border border-slate-200">
             </a>
+            
             <nav class="hidden md:flex space-x-6 lg:space-x-8 font-semibold text-gray-600 text-sm lg:text-base">
                 <a href="#home" class="hover:text-primary transition-colors">Home</a>
                 <a href="#about" class="hover:text-primary transition-colors">About</a>
@@ -58,12 +64,14 @@
                 <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
                 <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
             </nav>
+            
             <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 hover:text-primary focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
+
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-lg flex-col py-4 px-6 space-y-4 z-40 transition-all duration-300">
             <a href="#home" onclick="toggleMobileMenu()" class="block font-bold text-slate-600 hover:text-primary">Home</a>
             <a href="#about" onclick="toggleMobileMenu()" class="block font-bold text-slate-600 hover:text-primary">About</a>
@@ -82,9 +90,11 @@
             <h2 class="text-xl md:text-3xl font-bold text-gray-500 mb-10 tracking-widest uppercase">
                 Tech Savvy Leader
             </h2>
+
             <div class="w-full max-w-5xl overflow-hidden bg-white py-5 rounded-xl shadow-sm border border-gray-200 relative mb-8 flex">
                 <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
                 <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
+                
                 <div class="animate-marquee flex items-center font-bold text-gray-700 text-lg uppercase tracking-wide w-max whitespace-nowrap">
                     <div class="flex items-center">
                         <span>Product Manager</span> <span class="mx-8 text-gray-300">•</span>
@@ -115,6 +125,7 @@
                         <img src="assets/Nadhif2.png" alt="Nadhif Rifat Rasendriya" class="absolute inset-0 w-full h-full object-cover object-top hover:scale-105 transform transition-transform duration-500">
                         <div class="absolute inset-0 bg-accent opacity-0 group-hover:opacity-10 transition-opacity duration-500 mix-blend-overlay pointer-events-none"></div>
                     </div>
+                    
                     <div class="flex space-x-4">
                         <a href="https://clips.id/CV-Nadhif2026" target="_blank" title="Download CV" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-slate-500 text-slate-300 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300">
                             <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
@@ -395,7 +406,7 @@
                             <span class="text-sm font-medium text-slate-400 mt-2 md:mt-0 bg-slate-100 px-3 py-1 rounded-full w-fit">Mar 2024 - Dec 2025</span>
                         </div>
                         <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
-                            <li>Led a cross-functional team of six to deliver a mobile app from discovery to MVP.</li>
+                            <li>Led a cross-functional team of 3-5 members to deliver a mobile app from discovery to MVP.</li>
                             <li>Conducted user research and prioritized features using impact-effort analysis and BMC.</li>
                             <li>Delivered a product prototype that won a national-level competition.</li>
                         </ul>
@@ -417,13 +428,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" id="projects-container">
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group" onclick="openModal('project1')">
                     <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
-                        <img src="assets/poster-nusapath.png" alt="Nusa AI" onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1000&auto=format&fit=crop'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="assets/poster-nusapath.png" alt="NusaPath" onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1000&auto=format&fit=crop'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300"></div>
                     </div>
                     <div class="p-6 md:p-8">
                         <span class="text-xs font-black text-accent uppercase tracking-widest mb-2 block">Founder & Product Lead</span>
-                        <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">Nusa AI: Your Journey to Authentic Indonesia</h4>
-                        <p class="text-slate-500 text-sm line-clamp-2">Nusa AI is a smart travel platform utilizing a Human in the Loop (HITL) approach to help travelers plan personalized and sustainable trips across Indonesia.</p>
+                        <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">NusaPath - Your Journey to Authentic Indonesia</h4>
+                        <p class="text-slate-500 text-sm line-clamp-2">NusaPath is an AI-powered smart travel platform designed to help travelers plan safe, personalized, and sustainable trips across Indonesia.</p>
                     </div>
                 </div>
 
@@ -517,6 +528,8 @@
     <footer class="w-full bg-primary py-12 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 flex flex-col items-center text-center">
             
+            <img src="assets/logonadhifblack.png" alt="Nadhif Rifat Rasendriya" class="h-16 md:h-20 w-auto mb-6 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
+            
             <h2 class="text-2xl md:text-3xl font-black text-white mb-2 tracking-tight">Nadhif Rif'at Rasendriya</h2>
             <p class="text-slate-400 italic mb-8 text-sm md:text-base font-light">"Building impactful products through strategic vision and disciplined execution."</p>
             
@@ -602,9 +615,9 @@
 
         const projectsData = {
             'project1': {
-                title: "Nusa AI: Your Journey to Authentic Indonesia",
+                title: "NusaPath - Your Journey to Authentic Indonesia",
                 role: "Founder & Product Lead",
-                desc: "Nusa AI is a smart travel platform utilizing a Human in the Loop (HITL) approach to help travelers plan safe, personalized, and sustainable trips across Indonesia, while directly empowering local tourism players through a verified digital ecosystem. It integrates AI Smart Itinerary, local partner booking, travel safety support, and eco conscious features into one seamless mobile first experience.",
+                desc: "NusaPath is an AI-powered smart travel platform designed to help travelers plan safe, personalized, and sustainable trips across Indonesia, while directly empowering local tourism players through a verified digital ecosystem. NusaPath integrates AI Smart Itinerary, local partner booking, travel safety support, and eco-conscious features into one seamless mobile-first experience.",
                 bullets: [
                     "User research & problem validation",
                     "Feature prioritization (MoSCoW)",
@@ -614,16 +627,16 @@
                     "Landing page (website) development"
                 ],
                 linkName: "Official Landing Page",
-                linkUrl: "https://nusaai-website.vercel.app",
+                linkUrl: "https://nusapath-website.vercel.app",
                 image: "assets/poster-nusapath.png"
             },
             'project2': {
-                title: "LoopStyle: Give Your Clothes a Second Chance",
+                title: "LoopStyle - Give Your Clothes a Second Chance",
                 role: "Product & Project Manager, UX Researcher",
                 desc: "LoopStyle is a mobile application built on a circular economy approach, designed to help users manage unused clothing through three main features: Resell, Donate, and Recycle. Powered by AI and image processing technology, LoopStyle provides optimal recommendations based on clothing condition and user preferences.",
                 bullets: [
                     "Defined product strategy and feature scope for a circular economy mobile application",
-                    "Translated sustainability goals into user centered product flows (resell, donation, recycling)",
+                    "Translated sustainability goals into user-centered product flows (resell, donation, recycling)",
                     "Coordinated AI feature integration to ensure usability and operational feasibility"
                 ],
                 linkName: "Figma Prototype",
