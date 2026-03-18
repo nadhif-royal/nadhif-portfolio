@@ -575,6 +575,10 @@
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                         <span id="modal-link-text">Visit Link</span>
                     </a>
+                    <a href="#" id="modal-link-action-2" target="_blank" style="display: none;" class="inline-flex items-center px-6 py-3 bg-white text-primary border-2 border-primary font-bold rounded-xl hover:bg-slate-50 hover:-translate-y-1 transition-all duration-300 shadow-md">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                        <span id="modal-link-text-2">Visit Link 2</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -631,6 +635,8 @@
                 ],
                 linkName: "Official Landing Page",
                 linkUrl: "https://nusapath-website.vercel.app",
+                linkName2: "Figma Prototype",
+                linkUrl2: "https://clips.id/NusaPath-FigmaPrototype",
                 image: "assets/poster-nusapath.png"
             },
             'project2': {
@@ -682,6 +688,15 @@
                 actionBtn.style.display = 'inline-flex';
             } else {
                 actionBtn.style.display = 'none';
+            }
+
+            const actionBtn2 = document.getElementById('modal-link-action-2');
+            if(data.linkUrl2 && data.linkUrl2 !== '') {
+                actionBtn2.href = data.linkUrl2;
+                document.getElementById('modal-link-text-2').innerText = data.linkName2;
+                actionBtn2.style.display = 'inline-flex';
+            } else {
+                actionBtn2.style.display = 'none';
             }
 
             modal.classList.remove('hidden');
