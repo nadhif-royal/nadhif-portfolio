@@ -317,7 +317,6 @@
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="w-12 h-12 md:w-16 md:h-16 drop-shadow-sm">
                         <span class="text-[10px] md:text-xs font-bold text-slate-500 mt-3 uppercase tracking-widest">GitHub</span>
                     </div>
-                    
                     <div class="flex flex-col items-center hover:scale-110 transition-all duration-300 cursor-pointer">
                         <img src="assets/logogoogleworkspace.png" alt="Google Workspace" class="w-12 h-12 md:w-16 md:h-16 drop-shadow-sm object-contain">
                         <span class="text-[10px] md:text-xs font-bold text-slate-500 mt-3 uppercase tracking-widest text-center leading-tight">Google<br>Workspace</span>
@@ -432,6 +431,47 @@
         </div>
     </section>
 
+    <section id="projects" class="pb-24 bg-secondary w-full">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-5xl font-black text-primary inline-block relative">
+                    Selected <span class="text-accent">Projects</span>
+                </h3>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto font-medium text-sm md:text-base">Explore my selected projects, showcasing my dedication to strategic product management and impactful execution.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" id="projects-container">
+                
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group" onclick="openModal('project1')">
+                    <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                        <img src="assets/poster-nusapath.png" alt="NusaPath" onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1000&auto=format&fit=crop'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <span class="text-xs font-black text-accent uppercase tracking-widest mb-2 block">Founder & Product Lead</span>
+                        <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">NusaPath</h4>
+                        <p class="text-slate-500 text-sm line-clamp-2">NusaPath is an AI-powered smart travel platform designed to help travelers plan safe, personalized, and sustainable trips across Indonesia.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group" onclick="openModal('project2')">
+                    <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                        <img src="assets/poster-loopstyle.png" alt="LoopStyle" onerror="this.src='https://images.unsplash.com/photo-1498837167169-46e4d59bfce9?q=80&w=1000&auto=format&fit=crop'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <span class="text-xs font-black text-accent uppercase tracking-widest mb-2 block">Product & Project Manager</span>
+                        <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">LoopStyle</h4>
+                        <p class="text-slate-500 text-sm line-clamp-2">LoopStyle is a mobile application built on a circular economy approach, designed to help users manage unused clothing.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
     <section id="contact" class="py-16 bg-white w-full">
         <div class="max-w-xl mx-auto px-4">
             
@@ -529,6 +569,137 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-primary/80 backdrop-blur-sm p-4 md:p-10 opacity-0 transition-opacity duration-300">
+        
+        <div id="modal-content" class="bg-white rounded-[2rem] w-full max-w-4xl max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300 flex flex-col shadow-2xl">
+            
+            <button onclick="closeModal()" class="absolute top-4 right-4 md:top-6 md:right-6 bg-white/90 backdrop-blur text-primary hover:text-white hover:bg-contactRed rounded-full p-2 md:p-3 shadow-md z-10 transition-all duration-300">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="w-full h-48 md:h-80 bg-slate-100 flex-shrink-0">
+                <img id="modal-img" src="" alt="Project Cover" class="w-full h-full object-cover object-top">
+            </div>
+            
+            <div class="p-6 md:p-10 lg:p-12">
+                <h3 id="modal-title" class="text-2xl md:text-4xl font-black text-primary mb-2">Project Title</h3>
+                <p id="modal-role" class="text-accent font-bold text-xs md:text-sm tracking-widest uppercase mb-6">Role Name</p>
+                
+                <h4 class="text-lg md:text-xl font-bold text-primary mb-2">Overview</h4>
+                <p id="modal-desc" class="text-slate-600 leading-relaxed text-sm md:text-base mb-6">Description goes here...</p>
+
+                <h4 class="text-lg md:text-xl font-bold text-primary mb-3">Key Contributions</h4>
+                <ul id="modal-bullets" class="list-disc ml-5 space-y-2 text-slate-600 text-sm md:text-base mb-10">
+                    </ul>
+                
+                <div class="flex flex-wrap gap-4" id="modal-links">
+                    <a href="#" id="modal-link-action" target="_blank" class="inline-flex items-center px-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-accent hover:-translate-y-1 transition-all duration-300 shadow-md">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                        <span id="modal-link-text">Visit Link</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DATA PROJECTS SESUAI BRIEF
+        const projectsData = {
+            'project1': {
+                title: "NusaPath - Your Journey to Authentic Indonesia",
+                role: "Founder & Product Lead",
+                desc: "NusaPath is an AI-powered smart travel platform designed to help travelers plan safe, personalized, and sustainable trips across Indonesia, while directly empowering local tourism players through a verified digital ecosystem. NusaPath integrates AI Smart Itinerary, local partner booking, travel safety support, and eco-conscious features into one seamless mobile-first experience.",
+                bullets: [
+                    "User research & problem validation",
+                    "Feature prioritization (MoSCoW)",
+                    "Product requirement & roadmap",
+                    "MVP prototyping & iteration",
+                    "5 year financial projection and execution",
+                    "Landing page (website) development"
+                ],
+                linkName: "Official Landing Page",
+                linkUrl: "https://nusapath-website.vercel.app",
+                image: "assets/poster-nusapath.png"
+            },
+            'project2': {
+                title: "LoopStyle - Give Your Clothes a Second Chance",
+                role: "Product & Project Manager, UX Researcher",
+                desc: "LoopStyle is a mobile application built on a circular economy approach, designed to help users manage unused clothing through three main features: Resell, Donate, and Recycle. Powered by AI and image processing technology, LoopStyle provides optimal recommendations based on clothing condition and user preferences.",
+                bullets: [
+                    "Defined product strategy and feature scope for a circular economy mobile application",
+                    "Translated sustainability goals into user-centered product flows (resell, donation, recycling)",
+                    "Coordinated AI feature integration to ensure usability and operational feasibility"
+                ],
+                linkName: "Figma Prototype",
+                linkUrl: "https://clips.id/LoopStyle-FigmaPrototype",
+                image: "assets/poster-loopstyle.png" 
+            }
+        };
+
+        // MODAL LOGIC
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+        
+        function openModal(projectId) {
+            const data = projectsData[projectId];
+            if (!data) return;
+
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-role').innerText = data.role;
+            document.getElementById('modal-desc').innerText = data.desc;
+            
+            document.getElementById('modal-img').src = data.image;
+            document.getElementById('modal-img').onerror = function() {
+                this.src = 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1000&auto=format&fit=crop'; // fallback
+            };
+
+            const ulElement = document.getElementById('modal-bullets');
+            ulElement.innerHTML = ''; 
+            data.bullets.forEach(point => {
+                const li = document.createElement('li');
+                li.innerText = point;
+                ulElement.appendChild(li);
+            });
+            
+            const actionBtn = document.getElementById('modal-link-action');
+            if(data.linkUrl && data.linkUrl !== '') {
+                actionBtn.href = data.linkUrl;
+                document.getElementById('modal-link-text').innerText = data.linkName;
+                actionBtn.style.display = 'inline-flex';
+            } else {
+                actionBtn.style.display = 'none';
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto'; 
+            }, 300);
+        }
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
