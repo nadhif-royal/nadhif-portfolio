@@ -730,7 +730,7 @@
                 <p class="text-slate-600 font-bold mt-4 text-sm md:text-base">Send me a message</p>
             </div>
             
-            <form class="space-y-4">
+            <form class="space-y-4" onsubmit="sendToWhatsApp(event)">
                 <div>
                     <label for="name" class="block text-xs font-black text-primary uppercase tracking-widest mb-1">Name</label>
                     <input type="text" id="name" class="w-full px-4 py-2 rounded-xl border-2 border-slate-200 focus:outline-none focus:border-btnSubmit transition-colors shadow-sm" required>
@@ -901,7 +901,7 @@
                     "Facilitated cross-functional alignment between engineering and design",
                     "Managed the end-to-end development and launch of the landing page"
                 ],
-                linkName: "Official Landing Page",
+                linkName: "Landing Page",
                 linkUrl: "https://nusapath-website.vercel.app",
                 linkName2: "Figma Prototype",
                 linkUrl2: "https://clips.id/NusaPath-FigmaPrototype",
@@ -1039,6 +1039,20 @@
                 closeModal();
             }
         });
+
+        function sendToWhatsApp(event) {
+            event.preventDefault(); 
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const waText = `Hallo, Saya ${name}.\n${message}\nInfo lebih lanjut, hubungi saya melalui nomor ini atau email ke ${email}`;
+            
+            const encodedText = encodeURIComponent(waText);
+            
+            window.open(`https://wa.me/6281233397978?text=${encodedText}`, '_blank');
+        }
     </script>
 </body>
 </html>
