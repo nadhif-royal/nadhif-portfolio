@@ -773,7 +773,8 @@
                 <button onclick="filterCerts('credentials')" id="btn-cert-credentials" class="text-slate-400 border-transparent font-bold tracking-widest text-xs md:text-sm uppercase px-2 md:px-4 py-2 border-b-2 hover:text-primary transition-all duration-300">CREDENTIALS</button>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="certs-container">
+            <div id="certs-wrapper" class="relative">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 transition-all duration-500" id="certs-container">
                 
                 <div class="cert-item awards bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer border border-slate-100 group" onclick="openCertModal('cert_a1')">
                     <div class="aspect-[4/3] overflow-hidden relative bg-slate-50 p-4 flex items-center justify-center">
@@ -1040,6 +1041,13 @@
                         <img src="assets/credentials-udemyxyesieducationscrumfundamentalcourse.jpg" alt="Scrum Fundamental Course" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1589330694653-efa647532028?q=80&w=1000&auto=format&fit=crop'" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-md">
                         <div class="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]"><svg class="w-12 h-12 text-white transform scale-50 group-hover:scale-100 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div>
                     </div>
+                </div>
+
+                </div> <div id="certs-see-more-overlay" class="absolute bottom-0 left-0 w-full h-56 md:h-72 bg-gradient-to-t from-secondary via-secondary/95 to-transparent flex items-end justify-center pb-2 z-10 transition-opacity duration-300">
+                    <button onclick="expandCerts()" class="px-6 py-3 bg-white text-primary border-2 border-slate-200 font-bold rounded-xl hover:border-accent hover:text-accent hover:shadow-lg hover:-translate-y-1 transition-all duration-300 shadow-md flex items-center gap-2 mb-4">
+                        <span>See More Certificates</span>
+                        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    </button>
                 </div>
 
         
@@ -1530,9 +1538,22 @@
             'cert_c18': { title: "Scrum Fundamental Course", issuer: "Udemy x YESI Education", credentialId: "", url: "", image: "assets/credentials-udemyxyesieducationscrumfundamentalcourse.jpg" }
         };
 
+        let isAllCertsExpanded = false;
+
+        function expandCerts() {
+            isAllCertsExpanded = true;
+            filterCerts('all');
+        }
+
         function filterCerts(category) {
             const buttons = ['all', 'awards', 'organizational', 'credentials'];
+            const overlay = document.getElementById('certs-see-more-overlay');
             
+            // Reset expanded state jika pindah ke tab lain
+            if (category !== 'all') {
+                isAllCertsExpanded = false;
+            }
+
             // 1. Ubah warna tombol aktif
             buttons.forEach(btn => {
                 const el = document.getElementById(`btn-cert-${btn}`);
@@ -1545,10 +1566,25 @@
                 }
             });
 
-            // 2. Filter item dengan animasi
+            // 2. Filter item dengan limit dan animasi
             const items = document.querySelectorAll('.cert-item');
+            let visibleCount = 0;
+
             items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
+                let shouldShow = false;
+
+                if (category === 'all') {
+                    // Hanya tampilkan 12 pertama jika belum di-expand
+                    if (isAllCertsExpanded || visibleCount < 12) {
+                        shouldShow = true;
+                        visibleCount++;
+                    }
+                } else if (item.classList.contains(category)) {
+                    // Jika tab lain, tampilkan semua yang cocok
+                    shouldShow = true;
+                }
+
+                if (shouldShow) {
                     item.style.display = 'block';
                     setTimeout(() => {
                         item.classList.remove('opacity-0', 'scale-95');
@@ -1559,10 +1595,28 @@
                     item.classList.add('opacity-0', 'scale-95');
                     setTimeout(() => {
                         item.style.display = 'none';
-                    }, 300); // Tunggu transisi CSS selesai
+                    }, 300);
                 }
             });
+
+            // 3. Atur kemunculan layar transparan (Overlay)
+            if (category === 'all' && !isAllCertsExpanded && items.length > 12) {
+                overlay.style.display = 'flex';
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0', 'pointer-events-none');
+                }, 10);
+            } else {
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 300);
+            }
         }
+
+        // Terapkan limit "ALL" secara otomatis saat halaman pertama kali dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            filterCerts('all');
+        });
 
         const certModal = document.getElementById('cert-modal');
         const certModalContent = document.getElementById('cert-modal-content');
