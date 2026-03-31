@@ -180,7 +180,7 @@
                                     <svg class="w-4 h-4 md:w-6 md:h-6 text-accent mr-2 md:mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                     <span class="text-gray-200 text-sm md:text-lg font-semibold leading-snug">
                                         20+ Academic and Personal Projects Completed <br>
-                                        <span class="text-xs md:text-base font-normal text-gray-400">(mostly as leader)</span>
+                                        <span class="text-xs md:text-base font-normal text-gray-400">(mostly as team leader)</span>
                                     </span>
                                 </li>
                                 <li class="flex items-start">
@@ -1234,6 +1234,14 @@
                 <h4 class="text-lg md:text-xl font-bold text-primary mb-2">Overview</h4>
                 <p id="modal-desc" class="text-slate-600 leading-relaxed text-sm md:text-base mb-6">Description goes here...</p>
 
+                <div id="modal-achievements-container" class="hidden mb-8">
+                    <h4 class="text-lg md:text-xl font-bold text-primary mb-3 flex items-center gap-2">
+                        Achievements
+                    </h4>
+                    <div id="modal-achievements" class="flex flex-col sm:flex-row flex-wrap gap-2 md:gap-3">
+                        </div>
+                </div>
+
                 <h4 class="text-lg md:text-xl font-bold text-primary mb-3">Key Contributions</h4>
                 <ul id="modal-bullets" class="list-disc ml-5 space-y-2 text-slate-600 text-sm md:text-base mb-10">
                 </ul>
@@ -1311,6 +1319,10 @@
                 title: "NusaPath - Your Journey to Authentic Indonesia",
                 role: "Founder & Product Lead <span class='inline-flex items-center px-3 py-1.5 bg-gray-900 text-white text-[11px] md:text-xs font-bold rounded-md border border-slate-300 normal-case tracking-normal shadow-sm'>NIB: 0401260002686</span>",
                 desc: "NusaPath is an AI-powered smart travel platform designed to help travelers plan safe, personalized, and sustainable trips across Indonesia, while directly empowering local tourism players through a verified digital ecosystem. NusaPath integrates AI Smart Itinerary, local partner booking, travel safety support, and eco-conscious features into one seamless mobile-first experience.",
+                achievements: [
+                    "1st Place Business Plan Competition",
+                    "1st Place Business Model Canvas Competition"
+                ],
                 bullets: [
                     "<strong class='text-primary block mt-2 mb-1 text-base md:text-lg'>Product Management</strong>",
                     "Led user research to validate core problems and market opportunities",
@@ -1337,6 +1349,9 @@
                 title: "LoopStyle - Give Your Clothes a Second Chance",
                 role: "Product & Project Manager, UX Researcher",
                 desc: "LoopStyle is a mobile application built on a circular economy approach, designed to help users manage unused clothing through three main features: Resell, Donate, and Recycle. Powered by AI and image processing technology, LoopStyle provides optimal recommendations based on clothing condition and user preferences.",
+                achievements: [
+                    "3rd Place UI/UX Design Competition"
+                ],
                 bullets: [
                     "<strong class='text-primary block mt-2 mb-1 text-base md:text-lg'>Product Management</strong>",
                     "Spearheaded product vision and strategy for a circular economy mobile app, translating sustainability goals into executable features",
@@ -1356,6 +1371,9 @@
                 title: "DearMom - Smart Choice for Smart Moms",
                 role: "Product Manager & Project Manager",
                 desc: "DearMom is a digital marketplace designed to help young mothers efficiently meet their baby essentials needs in a practical, precise, and sustainable way. It addresses two core challenges: uncertainty in selecting the right baby clothing sizes as children grow, and the high level of waste from unused baby items.",
+                achievements: [
+                    "3rd Runner Up (Juara Harapan 1) Business Plan Competition"
+                ],
                 bullets: [
                     "<strong class='text-primary block mt-2 mb-1 text-base md:text-lg'>Product Management</strong>",
                     "Led end-to-end product development from discovery to MVP readiness, ensuring clear problem-solution alignment",
@@ -1432,8 +1450,28 @@
                 this.src = 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1000&auto=format&fit=crop';
             };
 
+           // Setup Achievements
+            const achContainer = document.getElementById('modal-achievements-container');
+            const achList = document.getElementById('modal-achievements');
+            
+            if (data.achievements && data.achievements.length > 0) {
+                achList.innerHTML = '';
+                data.achievements.forEach(ach => {
+                    const achEl = document.createElement('div');
+                    achEl.className = 'inline-flex items-start sm:items-center gap-2.5 px-3 sm:px-4 py-2 sm:py-2.5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm md:text-base text-yellow-800 font-bold shadow-sm';
+                    achEl.innerHTML = `<svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500 flex-shrink-0 mt-0.5 sm:mt-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> <span class="leading-tight">${ach}</span>`;
+                    achList.appendChild(achEl);
+                });
+                achContainer.classList.remove('hidden');
+                achContainer.classList.add('block');
+            } else {
+                achContainer.classList.add('hidden');
+                achContainer.classList.remove('block');
+            }
+
             const ulElement = document.getElementById('modal-bullets');
-            ulElement.innerHTML = ''; 
+            ulElement.innerHTML = '';
+            
             data.bullets.forEach(point => {
                 const li = document.createElement('li');
                 if (point.startsWith('<strong')) {
