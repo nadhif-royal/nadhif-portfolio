@@ -1883,7 +1883,8 @@
             
             data.bullets.forEach(point => {
                 const li = document.createElement('li');
-                if (point.startsWith('<strong')) {
+                // Pengecualian agar <strong> dan <div> (Key Takeaway) tidak memiliki bullet
+                if (point.startsWith('<strong') || point.startsWith('<div')) {
                     li.className = 'list-none -ml-5';
                 }
                 li.innerHTML = point;
@@ -1950,20 +1951,8 @@
 
         function renderModalSlider() {
             const slideImg = document.getElementById('modal-slide-img');
-            const dotsContainer = document.getElementById('modal-slider-dots');
-            
             slideImg.src = currentModalImages[currentModalSlide];
-            
-            dotsContainer.innerHTML = '';
-            currentModalImages.forEach((_, idx) => {
-                const dot = document.createElement('div');
-                dot.className = `h-2 rounded-full cursor-pointer transition-all duration-300 ${idx === currentModalSlide ? 'bg-accent w-6' : 'bg-slate-300/80 w-2 hover:bg-slate-400'}`;
-                dot.onclick = () => { 
-                    currentModalSlide = idx; 
-                    renderModalSlider(); 
-                };
-                dotsContainer.appendChild(dot);
-            });
+            // Indikator dots dihapus agar tidak menutupi teks informatif pada poster
         }
 
         function changeModalSlide(direction) {
