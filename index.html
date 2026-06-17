@@ -1849,8 +1849,14 @@
                 
                 if (data.isTall) {
                     singleImg.className = "w-full h-auto object-contain mx-auto transition-all duration-300"; 
+                    // KHUSUS VISTRA: Buat gambar dan tulisan menyatu tanpa tergencet
+                    modalContent.classList.remove('flex', 'flex-col');
+                    modalContent.classList.add('block');
                 } else {
                     singleImg.className = "w-full h-auto max-h-[30vh] md:max-h-[350px] object-cover sm:object-contain object-center mx-auto transition-all duration-300";
+                    // UNTUK PROJECT LAIN: Kembalikan ke layout normal agar tidak rusak
+                    modalContent.classList.remove('block');
+                    modalContent.classList.add('flex', 'flex-col');
                 }
                 
                 singleImg.onerror = function() {
@@ -1883,9 +1889,11 @@
             
             data.bullets.forEach(point => {
                 const li = document.createElement('li');
-                // Pengecualian agar <strong> dan <div> (Key Takeaway) tidak memiliki bullet
+                // Pengecualian: Hilangkan bullet hitam untuk elemen judul (strong) dan kotak Key Takeaway (div)
                 if (point.startsWith('<strong') || point.startsWith('<div')) {
-                    li.className = 'list-none -ml-5';
+                    li.className = 'list-none';
+                    li.style.listStyleType = 'none';
+                    li.style.marginLeft = '-1.25rem'; 
                 }
                 li.innerHTML = point;
                 ulElement.appendChild(li);
@@ -1952,7 +1960,6 @@
         function renderModalSlider() {
             const slideImg = document.getElementById('modal-slide-img');
             slideImg.src = currentModalImages[currentModalSlide];
-            // Indikator dots dihapus agar tidak menutupi teks informatif pada poster
         }
 
         function changeModalSlide(direction) {
