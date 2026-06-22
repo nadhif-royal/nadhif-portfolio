@@ -971,6 +971,106 @@
         </div>
     </section>
 
+    <!-- IMPACT SNAPSHOT SECTION -->
+    <section id="snapshot" class="py-20 bg-primary w-full text-white border-y border-slate-800 shadow-2xl relative z-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Impact <span class="text-accent">Snapshot</span></h3>
+                <p class="text-slate-400 max-w-2xl mx-auto font-medium text-sm md:text-base">A quantitative overview of my leadership journey, project execution, and community engagements.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-center divide-x divide-slate-700/50 border-y border-slate-700/50 py-10">
+                <div class="px-2 md:px-4 hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl md:text-6xl font-black text-white mb-2">20<span class="text-accent">+</span></div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">Leadership<br>Projects</div>
+                </div>
+                <div class="px-2 md:px-4 hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl md:text-6xl font-black text-white mb-2">35<span class="text-accent">+</span></div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">National<br>Achievements</div>
+                </div>
+                <div class="px-2 md:px-4 border-t border-slate-700/50 md:border-t-0 pt-8 md:pt-0 hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl md:text-6xl font-black text-white mb-2">15<span class="text-accent">+</span></div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">Event<br>Management</div>
+                </div>
+                <div class="px-2 md:px-4 border-t border-slate-700/50 md:border-t-0 pt-8 md:pt-0 hover:scale-105 transition-transform duration-300">
+                    <div class="text-4xl md:text-6xl font-black text-white mb-2">50<span class="text-accent">+</span></div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">Stakeholders<br>& Talents Managed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEYOND THE SCREEN SECTION -->
+    <section id="gallery" class="pb-24 pt-16 bg-secondary w-full">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <!-- CTA Button -->
+            <div class="flex justify-center mb-12">
+                <button id="btn-reveal-gallery" onclick="toggleGallery()" class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white border-2 border-slate-200 text-primary font-bold rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:border-accent transition-all duration-500 hover:-translate-y-1">
+                    <div class="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+                    <span class="relative z-10 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Discover Beyond the Screen
+                    </span>
+                </button>
+            </div>
+
+            <!-- Hidden Bento Box Gallery Section -->
+            <div id="impact-gallery" class="hidden opacity-0 transform translate-y-10 transition-all duration-700 ease-out w-full">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-black text-accent uppercase tracking-widest block mb-2">Visual Evidence</span>
+                    <h3 class="text-3xl md:text-4xl font-black text-primary mb-3">Beyond the Screen</h3>
+                    <p class="text-slate-500 text-sm md:text-base max-w-2xl mx-auto">Documentation of my active involvement in executive engagements, community empowerment, and cross-functional leadership on the field.</p>
+                </div>
+
+                <!-- Bento Grid Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:gap-6 h-auto md:h-[600px]">
+                    <!-- Item 1: Large Featured -->
+                    <div class="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden relative group shadow-sm bg-slate-200 min-h-[250px]">
+                        <img src="assets/poster-vistra.webp" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 md:p-8">
+                            <span class="text-accent text-xs font-bold uppercase tracking-wider mb-2 block">Executive Engagement</span>
+                            <h4 class="text-white text-2xl md:text-3xl font-black leading-tight mb-2">Capstone Exhibition with PT Epson</h4>
+                            <p class="text-slate-300 text-sm hidden md:block">Presenting the AI-Powered Part Counting Station to industrial stakeholders.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Wide Horizontal -->
+                    <div class="md:col-span-2 rounded-3xl overflow-hidden relative group shadow-sm bg-slate-200 min-h-[200px]">
+                        <img src="assets/poster-toyowira-1.webp" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 md:p-8">
+                            <span class="text-accent text-xs font-bold uppercase tracking-wider mb-2 block">The Voice of Community</span>
+                            <h4 class="text-white text-xl md:text-2xl font-black leading-tight mb-1">Community Empowerment via TOYOWIRA</h4>
+                            <p class="text-slate-300 text-sm hidden md:block">Mobilizing grassroots programs for local socioeconomic inclusion.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Small Square -->
+                    <div class="rounded-3xl overflow-hidden relative group shadow-sm bg-slate-200 min-h-[200px]">
+                        <img src="assets/organizational-bcabaktibcascholarshipawardee.jpg" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-5 md:p-6">
+                            <span class="text-accent text-[10px] font-bold uppercase tracking-wider mb-1 block">Networking</span>
+                            <h4 class="text-white text-lg font-black leading-tight">Company Visit BCA</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Small Square -->
+                    <div class="rounded-3xl overflow-hidden relative group shadow-sm bg-slate-200 min-h-[200px]">
+                        <img src="assets/organizational-bcatransformationalworkshop.jpg" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-5 md:p-6">
+                            <span class="text-accent text-[10px] font-bold uppercase tracking-wider mb-1 block">Impact at Scale</span>
+                            <h4 class="text-white text-lg font-black leading-tight">Transformational Program</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="certificates" class="pb-24 bg-secondary w-full scroll-mt-28">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
@@ -1971,23 +2071,48 @@
             renderModalSlider();
         }
 
-        function sendToWhatsApp(event) {
-            event.preventDefault(); 
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            const waText = `Hallo, Saya ${name}.\n${message}\nInfo lebih lanjut, hubungi saya melalui nomor ini atau email ke ${email}`;
+        function toggleGallery() {
+            const gallery = document.getElementById('impact-gallery');
+            const btn = document.getElementById('btn-reveal-gallery');
             
-            const encodedText = encodeURIComponent(waText);
-            
-            window.open(`https://wa.me/6281233397978?text=${encodedText}`, '_blank');
+            if (gallery.classList.contains('hidden')) {
+                // Tampilkan Galeri
+                gallery.classList.remove('hidden');
+                setTimeout(() => {
+                    gallery.classList.remove('opacity-0', 'translate-y-10');
+                    gallery.classList.add('opacity-100', 'translate-y-0');
+                }, 50);
+                
+                // Ubah teks dan ikon tombol menjadi Close
+                btn.innerHTML = `
+                    <div class="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+                    <span class="relative z-10 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+                        Hide Beyond the Screen
+                    </span>
+                `;
+            } else {
+                // Sembunyikan Galeri
+                gallery.classList.remove('opacity-100', 'translate-y-0');
+                gallery.classList.add('opacity-0', 'translate-y-10');
+                
+                setTimeout(() => {
+                    gallery.classList.add('hidden');
+                }, 700);
+                
+                // Kembalikan teks dan ikon tombol ke Open
+                btn.innerHTML = `
+                    <div class="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+                    <span class="relative z-10 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Discover Beyond the Screen
+                    </span>
+                `;
+                
+                // Gulir layar sedikit ke atas agar tombol tetap terlihat
+                btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
-
-
-        // ==========================================
-        // CERTIFICATES DATA & LOGIC
         // ==========================================
         const certsDataConfig = {
             // AWARDS
