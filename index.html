@@ -976,13 +976,13 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h3 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Impact <span class="text-accent">Snapshot</span></h3>
-                <p class="text-slate-400 max-w-2xl mx-auto font-medium text-sm md:text-base">A quantitative overview of my leadership journey, project execution, and community engagements.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto font-medium text-sm md:text-base">A quantitative overview of my leadership journey, product deliveries, and community engagements.</p>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-center divide-x divide-slate-700/50 border-y border-slate-700/50 py-10">
                 <div class="px-2 md:px-4 hover:scale-105 transition-transform duration-300">
                     <div class="text-4xl md:text-6xl font-black text-white mb-2">20<span class="text-accent">+</span></div>
-                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">Leadership<br>Projects</div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">Leadership<br>& PM Roles</div>
                 </div>
                 <div class="px-2 md:px-4 hover:scale-105 transition-transform duration-300">
                     <div class="text-4xl md:text-6xl font-black text-white mb-2">35<span class="text-accent">+</span></div>
@@ -990,11 +990,11 @@
                 </div>
                 <div class="px-2 md:px-4 border-t border-slate-700/50 md:border-t-0 pt-8 md:pt-0 hover:scale-105 transition-transform duration-300">
                     <div class="text-4xl md:text-6xl font-black text-white mb-2">15<span class="text-accent">+</span></div>
-                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">Event<br>Management</div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">Events<br>Managed</div>
                 </div>
                 <div class="px-2 md:px-4 border-t border-slate-700/50 md:border-t-0 pt-8 md:pt-0 hover:scale-105 transition-transform duration-300">
                     <div class="text-4xl md:text-6xl font-black text-white mb-2">50<span class="text-accent">+</span></div>
-                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">Stakeholders<br>& Talents Managed</div>
+                    <div class="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">Cross-Functional<br>Talents Led</div>
                 </div>
             </div>
         </div>
@@ -2074,43 +2074,33 @@
         function toggleGallery() {
             const gallery = document.getElementById('impact-gallery');
             const btn = document.getElementById('btn-reveal-gallery');
+            const btnText = document.getElementById('btn-reveal-text') || btn.querySelector('span'); 
             
             if (gallery.classList.contains('hidden')) {
-                // Tampilkan Galeri
                 gallery.classList.remove('hidden');
-                setTimeout(() => {
-                    gallery.classList.remove('opacity-0', 'translate-y-10');
-                    gallery.classList.add('opacity-100', 'translate-y-0');
-                }, 50);
                 
-                // Ubah teks dan ikon tombol menjadi Close
-                btn.innerHTML = `
-                    <div class="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
-                    <span class="relative z-10 flex items-center gap-2">
-                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
-                        Hide Beyond the Screen
-                    </span>
+                // FORCE REFLOW: Mencegah lag patah-patah dengan menyuruh browser mengkalkulasi layout sebelum dianimasikan
+                void gallery.offsetWidth; 
+                
+                gallery.classList.remove('opacity-0', 'translate-y-10');
+                gallery.classList.add('opacity-100', 'translate-y-0');
+                
+                btnText.innerHTML = `
+                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+                    Hide Beyond the Screen
                 `;
             } else {
-                // Sembunyikan Galeri
                 gallery.classList.remove('opacity-100', 'translate-y-0');
                 gallery.classList.add('opacity-0', 'translate-y-10');
                 
                 setTimeout(() => {
                     gallery.classList.add('hidden');
-                }, 700);
+                }, 500);
                 
-                // Kembalikan teks dan ikon tombol ke Open
-                btn.innerHTML = `
-                    <div class="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
-                    <span class="relative z-10 flex items-center gap-2">
-                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        Discover Beyond the Screen
-                    </span>
+                btnText.innerHTML = `
+                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    Discover Beyond the Screen
                 `;
-                
-                // Gulir layar sedikit ke atas agar tombol tetap terlihat
-                btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
         // ==========================================
