@@ -2194,11 +2194,12 @@
             'cert_c32': { title: "Pemrograman Prosedural dengan Python", issuer: "Dicoding", credentialId: "", url: "", image: "assets/credentials-dicodingpemrogramanproseduraldenganpython.jpg" }
         };
 
-        let isAllCertsExpanded = false;
+        let isCertsExpanded = false;
+        let currentCertCategory = 'all';
 
         function expandCerts() {
-            isAllCertsExpanded = true;
-            filterCerts('all');
+            isCertsExpanded = true;
+            filterCerts(currentCertCategory);
         }
 
         function filterCerts(category) {
@@ -2206,9 +2207,10 @@
             const overlay = document.getElementById('certs-see-more-overlay');
             const subheaders = document.querySelectorAll('.cred-subheader'); 
             
-            // Reset expanded state jika pindah ke tab lain
-            if (category !== 'all') {
-                isAllCertsExpanded = false;
+            // Jika user pindah tab, reset state expanded
+            if (category !== currentCertCategory) {
+                isCertsExpanded = false;
+                currentCertCategory = category;
             }
 
             // 1. Ubah warna tombol aktif
@@ -2223,9 +2225,9 @@
                 }
             });
 
-            // 2. Toggle Subheaders (Khusus untuk tab Credentials)
+            // 2. Toggle Subheaders (Khusus tab Credentials, dan HANYA TAMPIL jika di-expand agar grid rapi)
             subheaders.forEach(header => {
-                if (category === 'credentials') {
+                if (category === 'credentials' && isCertsExpanded) {
                     header.style.display = 'block';
                     setTimeout(() => {
                         header.classList.remove('opacity-0', 'scale-95');
@@ -2240,30 +2242,24 @@
                 }
             });
 
-            // 3. Filter item dengan limit dan animasi
+            // 3. Filter item dengan limit responsif (4 di HP, 6 di Desktop)
             const items = document.querySelectorAll('.cert-item');
+            const limit = window.innerWidth < 768 ? 4 : 6;
             let visibleCount = 0;
+            let matchCount = 0;
 
             items.forEach(item => {
-                let shouldShow = false;
+                const isMatch = category === 'all' || item.classList.contains(category);
+                
+                if (isMatch) matchCount++;
 
-                if (category === 'all') {
-                    // Hanya tampilkan 12 pertama jika belum di-expand
-                    if (isAllCertsExpanded || visibleCount < 12) {
-                        shouldShow = true;
-                        visibleCount++;
-                    }
-                } else if (item.classList.contains(category)) {
-                    // Jika tab lain, tampilkan semua yang cocok
-                    shouldShow = true;
-                }
-
-                if (shouldShow) {
+                if (isMatch && (isCertsExpanded || visibleCount < limit)) {
                     item.style.display = 'block';
                     setTimeout(() => {
                         item.classList.remove('opacity-0', 'scale-95');
                         item.classList.add('opacity-100', 'scale-100');
                     }, 10);
+                    visibleCount++;
                 } else {
                     item.classList.remove('opacity-100', 'scale-100');
                     item.classList.add('opacity-0', 'scale-95');
@@ -2274,7 +2270,7 @@
             });
 
             // 4. Atur kemunculan layar transparan (Overlay)
-            if (category === 'all' && !isAllCertsExpanded && items.length > 12) {
+            if (!isCertsExpanded && matchCount > limit) {
                 overlay.style.display = 'flex';
                 setTimeout(() => {
                     overlay.classList.remove('opacity-0', 'pointer-events-none');
