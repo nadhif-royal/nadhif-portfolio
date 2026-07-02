@@ -369,7 +369,7 @@
                             <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600 relative z-10">
                                 <li><strong>Selected</strong> as 1 of only 80 undergraduate awardees from Universitas Brawijaya based on rigorous academic, leadership, and interview evaluations.</li>
                                 <li><strong>Designated</strong> as an official student ambassador to drive Bank Indonesia’s regional digital literacy, economic development, and public policy socialization.</li>
-                                <li><strong>Empowered</strong> to actively execute GenBI's 3 Core Pillars: serving as Frontliners, Agents of Change, and Future Leaders in the community.</li>
+                                <li><strong>Empowered</strong> to actively execute Generasi Baru Indonesia (GenBI)'s 3 Core Pillars: serving as Frontliners, Agents of Change, and Future Leaders in the community.</li>
                             </ul>
                         </div>
                     </div>
@@ -1058,7 +1058,7 @@
                 </button>
             </div>
 
-            <!-- Hidden Bento Box Gallery Section -->
+            <!-- Hidden Gallery Section -->
             <div id="impact-gallery" class="hidden opacity-0 transform translate-y-10 transition-all duration-500 ease-out w-full">
                 <div class="text-center mb-10">
                     <span class="text-xs font-black text-accent uppercase tracking-widest block mb-2">Visual Evidence</span>
@@ -1066,49 +1066,145 @@
                     <p class="text-slate-500 text-sm md:text-base max-w-2xl mx-auto">Documentation of my active involvement in executive engagements, community empowerment, and cross-functional leadership on the field.</p>
                 </div>
 
-                <!-- Bento Grid Layout -->
-                <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:gap-6 h-auto md:h-[600px]">
-                    <!-- Item 1: Large Featured -->
-                    <div class="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden relative group shadow-md bg-primary min-h-[250px]">
-                        <img src="assets/poster-vistra.webp" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md">Executive Engagement</span>
-                            <h4 class="text-white text-2xl md:text-3xl font-black leading-tight mb-2 drop-shadow-md">Capstone Exhibition with PT Epson</h4>
-                            <p class="text-slate-200 text-sm hidden md:block drop-shadow-md">Presenting the AI-Powered Part Counting Station to industrial stakeholders.</p>
+                <!-- Grid Layout (Like Projects) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Item 1: Pameran Capstone -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col" onclick="openModal('gallery_capstone')">
+                        <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                            <img src="assets/beyond-capstone-1.webp" alt="Industrial Capstone Exhibition" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+                                <span class="bg-primary/80 backdrop-blur text-white px-4 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> View Gallery (9 Photos)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1 flex flex-col">
+                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md w-fit">Executive Engagement</span>
+                            <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">Industrial Capstone Exhibition</h4>
+                            <p class="text-slate-500 text-sm flex-1">Presenting the VISTRA AI Part Counting Station to PT Epson stakeholders, securing the Best Innovation Award.</p>
                         </div>
                     </div>
 
-                    <!-- Item 2: Wide Horizontal -->
-                    <div class="md:col-span-2 rounded-3xl overflow-hidden relative group shadow-md bg-primary min-h-[200px]">
-                        <img src="assets/poster-toyowira-1.webp" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md">The Voice of Community</span>
-                            <h4 class="text-white text-xl md:text-2xl font-black leading-tight mb-1 drop-shadow-md">Community Empowerment via TOYOWIRA</h4>
-                            <p class="text-slate-200 text-sm hidden md:block drop-shadow-md">Mobilizing grassroots programs for local socioeconomic inclusion.</p>
+                    <!-- Item 2: Community Empowerment -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col" onclick="openModal('gallery_ce')">
+                        <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                            <img src="assets/beyond-ce-1.webp" alt="Community Empowerment" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+                                <span class="bg-primary/80 backdrop-blur text-white px-4 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> View Gallery (13 Photos)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1 flex flex-col">
+                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md w-fit">Community Impact</span>
+                            <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">Head of Logistics — TOYOWIRA</h4>
+                            <p class="text-slate-500 text-sm flex-1">Driving grassroots socioeconomic inclusion and sustainable community development in Desa Toyomarto.</p>
                         </div>
                     </div>
 
-                    <!-- Item 3: Small Square -->
-                    <div class="rounded-3xl overflow-hidden relative group shadow-md bg-primary min-h-[200px]">
-                        <img src="assets/organizational-bcabaktibcascholarshipawardee.jpg" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-5 md:p-6 w-full">
-                            <span class="inline-block bg-accent text-white px-2.5 py-1 rounded-md text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-2 shadow-sm">Networking</span>
-                            <h4 class="text-white text-lg font-black leading-tight drop-shadow-md">Company Visit BCA</h4>
+                    <!-- Item 3: MMD FILKOM -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col" onclick="openModal('gallery_mmd')">
+                        <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                            <img src="assets/beyond-mmd-1.webp" alt="MMD FILKOM UB" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+                                <span class="bg-primary/80 backdrop-blur text-white px-4 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> View Gallery (13 Photos)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1 flex flex-col">
+                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md w-fit">Community Impact</span>
+                            <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">Digital Literacy Empowerment</h4>
+                            <p class="text-slate-500 text-sm flex-1">Leading field logistics and executing digital literacy programs during a 30-day community service deployment.</p>
                         </div>
                     </div>
 
-                    <!-- Item 4: Small Square -->
-                    <div class="rounded-3xl overflow-hidden relative group shadow-md bg-primary min-h-[200px]">
-                        <img src="assets/organizational-bcatransformationalworkshop.jpg" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-5 md:p-6 w-full">
-                            <span class="inline-block bg-accent text-white px-2.5 py-1 rounded-md text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-2 shadow-sm">Impact at Scale</span>
-                            <h4 class="text-white text-lg font-black leading-tight drop-shadow-md">Transformational Program</h4>
+                    <!-- Item 4: Public Speaking -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col" onclick="openModal('gallery_speaker')">
+                        <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                            <img src="assets/beyond-speaker-1.webp" alt="Public Speaking" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+                                <span class="bg-primary/80 backdrop-blur text-white px-4 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> View Gallery (8 Photos)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1 flex flex-col">
+                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md w-fit">Public Communication</span>
+                            <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">Professional Speaking Engagements</h4>
+                            <p class="text-slate-500 text-sm flex-1">Delivering actionable insights on career preparation, digital literacy, and leadership across multiple institutional platforms.</p>
                         </div>
                     </div>
+
+                    <!-- Item 5: AIESEC -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col" onclick="openModal('gallery_aiesec')">
+                        <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                            <img src="assets/beyond-speakeraiesec-1.webp" alt="AIESEC Speaker" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+                                <span class="bg-primary/80 backdrop-blur text-white px-4 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> View Gallery (5 Photos)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1 flex flex-col">
+                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md w-fit">Public Communication</span>
+                            <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">Keynote Speaker at AIESEC</h4>
+                            <p class="text-slate-500 text-sm flex-1">Sharing scholarship acquisition strategies and Bank Indonesia selection insights to emerging youth leaders.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: BCA Booth Speaker -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col" onclick="openModal('gallery_booth')">
+                        <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                            <img src="assets/beyond-booth-1.webp" alt="BCA Booth Speaker" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+                                <span class="bg-primary/80 backdrop-blur text-white px-4 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> View Gallery (6 Photos)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1 flex flex-col">
+                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md w-fit">Brand Advocacy</span>
+                            <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">Bank Indonesia & BCA Representative</h4>
+                            <p class="text-slate-500 text-sm flex-1">Public relations and educational outreach representing Bank Indonesia and BCA at major university exhibitions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: Company Visit BCA -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col" onclick="openModal('gallery_comvis')">
+                        <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                            <img src="assets/beyond-comvisbca-1.webp" alt="Company Visit BCA" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+                                <span class="bg-primary/80 backdrop-blur text-white px-4 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> View Gallery (5 Photos)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1 flex flex-col">
+                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md w-fit">Corporate Networking</span>
+                            <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">Corporate Immersion at BCA</h4>
+                            <p class="text-slate-500 text-sm flex-1">Exclusive financial literacy, corporate culture, and career opportunity immersion for selected scholarship awardees.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: Transformational Program -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col" onclick="openModal('gallery_transform')">
+                        <div class="h-56 overflow-hidden relative bg-slate-100 border-b border-slate-100">
+                            <img src="assets/beyond-transformational-1.webp" alt="Transformational Program" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 flex items-center justify-center">
+                                <span class="bg-primary/80 backdrop-blur text-white px-4 py-2 rounded-full font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> View Gallery (9 Photos)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1 flex flex-col">
+                            <span class="inline-block bg-accent text-white px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 shadow-md w-fit">Capacity Building</span>
+                            <h4 class="text-2xl font-black text-primary mb-2 group-hover:text-accent transition-colors">Executive Leadership Training</h4>
+                            <p class="text-slate-500 text-sm flex-1">Intensive two-day professional development and team-building program facilitated by expert psychologists.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -1780,6 +1876,62 @@
         }
 
         const projectsData = {
+            'gallery_aiesec': {
+                title: "Keynote Speaker at AIESEC",
+                role: "Public Communication",
+                desc: "Sharing scholarship acquisition strategies and Bank Indonesia selection insights to emerging youth leaders.",
+                bullets: [], achievements: [],
+                images: ["assets/beyond-speakeraiesec-1.webp", "assets/beyond-speakeraiesec-2.webp", "assets/beyond-speakeraiesec-3.webp", "assets/beyond-speakeraiesec-4.webp", "assets/beyond-speakeraiesec-5.webp"]
+            },
+            'gallery_booth': {
+                title: "Bank Indonesia & BCA Representative",
+                role: "Brand Advocacy",
+                desc: "Public relations and educational outreach representing Bank Indonesia and BCA at major university exhibitions.",
+                bullets: [], achievements: [],
+                images: ["assets/beyond-booth-1.webp", "assets/beyond-booth-2.webp", "assets/beyond-booth-3.webp", "assets/beyond-booth-4.webp", "assets/beyond-booth-5.webp", "assets/beyond-booth-6.webp"]
+            },
+            'gallery_ce': {
+                title: "Head of Logistics — TOYOWIRA",
+                role: "Community Impact",
+                desc: "Driving grassroots socioeconomic inclusion and sustainable community development in Desa Toyomarto.",
+                bullets: [], achievements: [],
+                images: ["assets/beyond-ce-1.webp", "assets/beyond-ce-2.webp", "assets/beyond-ce-3.webp", "assets/beyond-ce-4.webp", "assets/beyond-ce-5.webp", "assets/beyond-ce-6.webp", "assets/beyond-ce-7.webp", "assets/beyond-ce-8.webp", "assets/beyond-ce-9.webp", "assets/beyond-ce-10.webp", "assets/beyond-ce-11.webp", "assets/beyond-ce-12.webp", "assets/beyond-ce-13.webp"]
+            },
+            'gallery_comvis': {
+                title: "Corporate Immersion at BCA",
+                role: "Corporate Networking",
+                desc: "Exclusive financial literacy, corporate culture, and career opportunity immersion for selected scholarship awardees.",
+                bullets: [], achievements: [],
+                images: ["assets/beyond-comvisbca-1.webp", "assets/beyond-comvisbca-2.webp", "assets/beyond-comvisbca-3.webp", "assets/beyond-comvisbca-4.webp", "assets/beyond-comvisbca-5.webp"]
+            },
+            'gallery_mmd': {
+                title: "Digital Literacy Empowerment",
+                role: "Community Impact",
+                desc: "Leading field logistics and executing digital literacy programs during a 30-day community service deployment.",
+                bullets: [], achievements: [],
+                images: ["assets/beyond-mmd-1.webp", "assets/beyond-mmd-2.webp", "assets/beyond-mmd-3.webp", "assets/beyond-mmd-4.webp", "assets/beyond-mmd-5.webp", "assets/beyond-mmd-6.webp", "assets/beyond-mmd-7.webp", "assets/beyond-mmd-8.webp", "assets/beyond-mmd-9.webp", "assets/beyond-mmd-10.webp", "assets/beyond-mmd-11.webp", "assets/beyond-mmd-12.webp", "assets/beyond-mmd-13.webp"]
+            },
+            'gallery_capstone': {
+                title: "Industrial Capstone Exhibition",
+                role: "Executive Engagement",
+                desc: "Presenting the VISTRA AI Part Counting Station to PT Epson stakeholders, securing the Best Innovation Award.",
+                bullets: [], achievements: [],
+                images: ["assets/beyond-capstone-1.webp", "assets/beyond-capstone-2.webp", "assets/beyond-capstone-3.webp", "assets/beyond-capstone-4.webp", "assets/beyond-capstone-5.webp", "assets/beyond-capstone-6.webp", "assets/beyond-capstone-7.webp", "assets/beyond-capstone-8.webp", "assets/beyond-capstone-9.webp"]
+            },
+            'gallery_speaker': {
+                title: "Professional Speaking Engagements",
+                role: "Public Communication",
+                desc: "Delivering actionable insights on career preparation, digital literacy, and leadership across multiple institutional platforms.",
+                bullets: [], achievements: [],
+                images: ["assets/beyond-speaker-1.webp", "assets/beyond-speaker-2.webp", "assets/beyond-speaker-3.webp", "assets/beyond-speaker-4.webp", "assets/beyond-speaker-5.webp", "assets/beyond-speaker-6.webp", "assets/beyond-speaker-7.webp", "assets/beyond-speaker-8.webp"]
+            },
+            'gallery_transform': {
+                title: "Executive Leadership Training",
+                role: "Capacity Building",
+                desc: "Intensive two-day professional development and team-building program facilitated by expert psychologists.",
+                bullets: [], achievements: [],
+                images: ["assets/beyond-transformational-1.webp", "assets/beyond-transformational-2.webp", "assets/beyond-transformational-3.webp", "assets/beyond-transformational-4.webp", "assets/beyond-transformational-5.webp", "assets/beyond-transformational-6.webp", "assets/beyond-transformational-7.webp", "assets/beyond-transformational-8.webp", "assets/beyond-transformational-9.webp"]
+            },
             'project1': {
                 title: "NusaPath - Your Journey to Authentic Indonesia",
                 role: "Founder & Product Lead <span class='inline-flex items-center px-3 py-1.5 bg-gray-900 text-white text-[11px] md:text-xs font-bold rounded-md border border-slate-300 normal-case tracking-normal shadow-sm'>NIB: 0401260002686</span>",
