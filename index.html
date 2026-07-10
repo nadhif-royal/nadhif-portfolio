@@ -1846,6 +1846,11 @@
                         <span id="modal-link-text-3">Visit Link 3</span>
                     </a>
                     
+                    <a href="#" id="modal-link-action-4" target="_blank" style="display: none;" class="inline-flex items-center px-6 py-3 bg-rose-500 text-white border-2 border-rose-500 font-bold rounded-xl hover:bg-rose-600 hover:border-rose-600 hover:-translate-y-1 transition-all duration-300 shadow-md">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                        <span id="modal-link-text-4">Video Demo</span>
+                    </a>
+                    
                 </div>
             </div>
         </div>
@@ -2030,6 +2035,8 @@
                 linkUrl2: "https://clips.id/NusaPath-FigmaPrototype",
                 linkName3: "Chatbot",
                 linkUrl3: "https://nusa-ai-chatbot.vercel.app/",
+                linkName4: "Video Demo",
+                linkUrl4: "https://drive.google.com/file/d/1XxZaLXglrLF59VJGtuVg6OjugEaFj1-G/view?usp=sharing",
                 image: "assets/poster-nusapath.webp"
             },
             'project2': {
@@ -2071,6 +2078,8 @@
                 ],
                 linkName: "Figma Prototype",
                 linkUrl: "https://clips.id/DearMom-FigmaPrototype",
+                linkName4: "Video Demo",
+                linkUrl4: "https://drive.google.com/file/d/1ndSm71_p8VpYl4kgCgh6OpE0FlLP0qDT/view?usp=sharing",
                 image: "assets/poster-dearmom.webp"
             },
             'project4': {
@@ -2121,6 +2130,8 @@
                 linkUrl2: "https://clips.id/SmartNusa-FigmaPrototype",
                 linkName3: "Chatbot",
                 linkUrl3: "https://nusa-ai-chatbot.vercel.app/",
+                linkName4: "Video Demo",
+                linkUrl4: "https://drive.google.com/file/d/1h4WcderkbBms15OPZ-iu1wql6Zo1Az5Z/view?usp=sharing",
                 image: "assets/poster-smartnusa.webp"
             },
             'project6': {
@@ -2157,12 +2168,12 @@
                     "<strong class='text-primary block mt-4 mb-1 text-base md:text-lg'>Creative Product Storytelling</strong> Directed and edited the high-fidelity demonstration video to translate raw hardware execution and Grafana dashboard metrics into a compelling user narrative.",
                     "<div class='mt-8 p-6 bg-blue-50 border border-blue-200 rounded-2xl'><strong class='text-primary block mb-2 text-lg'>🚀 Key Takeaway</strong> <p class='text-slate-700 text-sm leading-relaxed'>This experience solidified my capability to bridge advanced deep learning pipelines with rigid edge hardware constraints. I discovered that real-world product excellence demands adapting software to conquer unpredictable physical variables like industrial lighting glare and hardware computing latencies rather than merely optimizing isolated algorithmic metrics. I am highly motivated to leverage this adaptive, interdisciplinary problem-solving mindset throughout the nine-month learning journey at the Academy.</p></div>"
                 ],
-                linkName: "Product Demo Video",
-                linkUrl: "https://clips.id/EpsonA4-VideoDemo",
-                linkName2: "Live KPI Dashboard",
-                linkUrl2: "https://clips.id/DashboardCapstoneProject",
-                linkName3: "Github Repository",
-                linkUrl3: "https://github.com/APermata7/part-counting-station",
+                linkName: "Live KPI Dashboard",
+                linkUrl: "https://clips.id/DashboardCapstoneProject",
+                linkName2: "Github Repository",
+                linkUrl2: "https://github.com/APermata7/part-counting-station",
+                linkName4: "Video Demo",
+                linkUrl4: "https://youtu.be/ySSmzygAA70?si=G7rEQMpQIWucf2UW",
                 image: "assets/poster-vistra.webp",
                 isTall: true 
             },
@@ -2178,6 +2189,8 @@
                     "<strong class='text-primary block mt-5 mb-1 text-base md:text-lg'>KLOTIK & SOBAT — Innovation & Digital Marketing</strong> Supported 24 artisans in redesigning products and drove 3.6× growth in social media engagement for local tourism content, increasing digital marketing competency by +26.1%.",
                     "<div class='mt-8 p-6 bg-blue-50 border border-blue-200 rounded-2xl'><strong class='text-primary block mb-2 text-lg'>🚀 Key Takeaway</strong> <p class='text-slate-700 text-sm leading-relaxed'>Orchestrating this multi-stakeholder ecosystem proved that technical solutions are only as powerful as a community's readiness to adopt them. Deploying digital literacy and formalization tracks required shifting from rigid engineering assumptions to deep human empathy. True inclusion demands a participatory architecture where creators intentionally align frameworks with the unique capabilities of the end user. This grassroots operation significantly matured my ability to bridge software solutions with organic human development.</p></div>"
                 ],
+                linkName4: "Aftermovie Video",
+                linkUrl4: "https://www.instagram.com/reel/DOIy6xvk8Sd/",
                 images: [
                     "assets/poster-toyowira-1.webp",
                     "assets/poster-toyowira-2.webp",
@@ -2291,6 +2304,15 @@
                 actionBtn3.style.display = 'inline-flex';
             } else {
                 actionBtn3.style.display = 'none';
+            }
+
+            const actionBtn4 = document.getElementById('modal-link-action-4');
+            if(data.linkUrl4 && data.linkUrl4 !== '') {
+                actionBtn4.href = data.linkUrl4;
+                document.getElementById('modal-link-text-4').innerText = data.linkName4 || 'Video Demo';
+                actionBtn4.style.display = 'inline-flex';
+            } else {
+                actionBtn4.style.display = 'none';
             }
 
             modal.classList.remove('hidden');
